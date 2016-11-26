@@ -30,7 +30,7 @@ var resultOfCalc = ft.forEach();
 ### Usage
 
 #### HTML/Browser
-To use the plugin in a web page, add a **<script>** tag referencing the moment.js and moment-precise-range.js files, ensuring that the tag appears after the tag used to include the falaki-time.js library:
+To use the plugin in a web page, add a `script` tag referencing the moment.js and moment-precise-range.js files, ensuring that the tag appears after the tag used to include the falaki-time.js library:
 ```html
 <script type="text/javascript" src="/scripts/moment.js"></script>
 <script type="text/javascript" src="/scripts/moment-precise-range.js"></script>
