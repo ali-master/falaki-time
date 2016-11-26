@@ -53,3 +53,21 @@ falakiTime.prototype.ehconst = function () {
     ehconst = moment(numbertoTime, "HH:mm");
     return ehconst || 0;
 }
+
+/**
+ * Convert number of seconds into time object
+ *
+ * @param integer secs Number of seconds to convert
+ * @return object
+ */
+falakiTime.prototype._rectime = function (secs) {
+    var hr  = Math.floor(secs / 3600);
+    var min = Math.floor((secs - (hr * 3600))/60);
+    var sec = secs - (hr * 3600) - (min * 60);
+
+    while (min.length < 2) {min = '0' + min;}
+    while (sec.length < 2) {sec = '0' + min;}
+    if (hr) hr += ':';
+
+    return hr + min + ':' + sec;
+};
