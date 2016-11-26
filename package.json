@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/ali-master/falaki-time/issues"
   },
-  "homepage": "https://github.com/ali-master/falaki-time#readme"
+  "homepage": "https://github.com/ali-master/falaki-time#readme",
+  "dependencies": {
+    "moment": "^2.17.0"
+  }
 }
