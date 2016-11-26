@@ -41,3 +41,15 @@ falakiTime.prototype.total = function () {
     this._total = hours + minutes;
     return this._total || 0;
 };
+
+// 3th Stage [find Every hour constellation]
+falakiTime.prototype.ehconst = function () {
+    var ehconst = this._total / 12;
+
+    // Convert number of seconds into time
+    var numbertoTime = this._rectime(ehconst.toFixed(0));
+
+    // make new time from numbertoTime variable value and equal to ehconst
+    ehconst = moment(numbertoTime, "HH:mm");
+    return ehconst || 0;
+}
