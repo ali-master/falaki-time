@@ -13,6 +13,7 @@ var falakiTime = function(start, end) {
     this.end   = end;
 
     this._format = "HH:mm";
+    this._total  = 0;
 }
 // 1th Stage [get diff from start and end times]
 falakiTime.prototype.diff = function () {
@@ -28,4 +29,15 @@ falakiTime.prototype.diff = function () {
     // diffTime = start - end
     var diffTime = moment.preciseDiff(mStart, mEnd, true);
     return diffTime || "00.00";
+};
+
+// 2th Stage [Calculate Times]
+falakiTime.prototype.total = function () {
+    // multiply hours to 60
+    // then total hours with minutes
+    var hours = this.diff().hours * 60;
+    var minutes = this.diff().minutes;
+
+    this._total = hours + minutes;
+    return this._total || 0;
 };
