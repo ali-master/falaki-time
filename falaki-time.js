@@ -89,3 +89,9 @@ falakiTime.prototype.forEach = function() {
     }
     return all;
 }
+
+if (typeof module != 'undefined' && module.exports && this.module !== module) {
+	module.exports = falakiTime;
+}else if (typeof define === 'function' && define.amd) {
+	define(falakiTime);
+}
