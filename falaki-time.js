@@ -71,3 +71,21 @@ falakiTime.prototype._rectime = function (secs) {
 
     return hr + min + ':' + sec;
 };
+
+// 4th stage [add iterate number the value of 3th stage to start time until the 00:00 hours]
+falakiTime.prototype.forEach = function() {
+    this.diff.call(this);
+    this.total.call(this);
+
+    var iterate = this.ehconst.call(this);
+    var hours   = iterate.get("hours");
+    var minutes = iterate.get("minutes");
+
+    var startTime = moment(this.start, "HH:mm"),
+        all       = new Array();
+    for (var i = startTime.get("hours"); i < 24; i++) {
+        startTime = startTime.add(hours, "hours").add(minutes, 'minutes');
+        all.push(startTime.get("hours") + ":" + startTime.get("minutes"));
+    }
+    return all;
+}
