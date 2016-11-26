@@ -1,8 +1,10 @@
 'use strict';
 
-var moment      = require('moment');
-var preciseDiff = require("moment-precise-range-plugin");
+if (typeof moment === "undefined" && require) {
+    var moment      = require('moment');
+    var preciseDiff = require("moment-precise-range-plugin");
 
+}
 /**
  * Calculate hours constellation
  * @param  {[string]} start [Sunrise time]
