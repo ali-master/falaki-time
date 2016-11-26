@@ -1,7 +1,7 @@
 {
   "name": "falaki-time",
   "version": "1.0.0",
-  "description": "Calculate hours constellation",
+  "description": "Calculate hours of constellation",
   "main": "falaki-time.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

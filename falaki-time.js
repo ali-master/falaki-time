@@ -6,7 +6,7 @@ if (typeof moment === "undefined" && require) {
 
 }
 /**
- * Calculate hours constellation
+ * Calculate hours of constellation
  * @param  {[string]} start [Sunrise time]
  * @param  {[string]} end   [sunset time]
  */
