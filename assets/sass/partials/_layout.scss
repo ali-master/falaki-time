@@ -1,0 +1,26 @@
+$S: 480px;
+$M: 768px;
+$B: 980px;
+$L: 1170px;
+@mixin media($display){
+	@if $display == S{
+   		@media only screen and (min-width: $S) and (max-width: $M){
+   			@content;
+   		}
+  	}
+  	@else if $display == M{
+   		@media only screen and (max-width: $M) and (min-width: $S){
+   			@content;
+   		}
+  	}
+  	@else if $display == L{
+   		@media only screen and (max-width: $L) and (min-width: $B){
+   			@content;
+   		}
+  	}
+		@else if $display == B{
+   		@media only screen and (min-width: $M) and (max-width: $B){
+   			@content;
+   		}
+  	}
+}
