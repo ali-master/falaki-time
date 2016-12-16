@@ -16,9 +16,15 @@ $(window).ready(function() {
 		start = $('#sunset').val()  || "00:00";
 		end   = $('#sunrise').val() || "00:00";
 
-		if(start == "00:00"){
+		if(start == "00:00")
 			return;
-		}
+
+		var jstart = Date.parse('20 Aug 2000 ' + start);
+		var jend   = Date.parse('20 Aug 2000 ' + end);
+
+		if(jstart >= jend)
+			return;
+		
 
 		start.toString();
 		end.toString();
