@@ -520,3 +520,7 @@ h1, h2, h3, h4, h5, h6 {
 .form-control:focus {
   border-color: #e87c86 !important;
 }
+
+table > tbody > tr > td {
+  font-size: 14px;
+}
