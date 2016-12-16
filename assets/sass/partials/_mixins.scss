@@ -1,0 +1,47 @@
+// center elements
+@mixin center($xy:xy){
+    @if $xy == xy{
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        @include transform(translateX(-50%) translateY(-50%));
+    }@else if $xy == x{
+        left: 50%;
+        right: auto;
+        @include transform(translateX(-50%));
+    }@else if $xy == y{
+        top: 50%;
+        bottom: auto;
+        @include transform(translateY(-50%));
+    }@else if $xy == xn{
+      margin: 0px auto;
+    }
+}
+
+@mixin font-smoothing{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizelegibility;
+}
+
+@mixin calc($property, $expression){
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}
+
+@mixin blur($value){
+    filter: blur(#{$value});
+    -webkit-filter: blur(#{$value});
+    -moz-filter: blur(#{$value});
+}
+@mixin fontface($name, $ttf, $woff, $eot){
+  @font-face {
+    font-family: #{$name};
+    src: font-url($ttf) format("woff"),
+         font-url($woff) format("truetype"),
+         font-url($eot) format("embedded-opentype");
+    font-style: normal;
+    font-weight: normal;
+  }
+}
